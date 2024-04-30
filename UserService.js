@@ -5,7 +5,7 @@ class UserService {
         this.emailService = emailService;
     }
 
-    async registerUser(user, UserType) {
+    /*async registerUser(user, UserType) {
         await this.userRepository.saveUser(user);
         if (UserType.Wholesaler) {
             await this.emailService.message(user.email, "Welcome as a wholesaler buyer. \n Sending welcome email and agreement of terms and conditions for wholesaler buyers");
@@ -13,10 +13,11 @@ class UserService {
             this.emailService.message(user.email, "Thank you for registering! \nYou'll soon have access to our catalog of technology products.`");
         }
     }
+    */
 
-    async registerUsertwo(user, emailService) {
+    async registerUser(user, emailService) {
         await  this.userRepository.saveUser(user);
-        emailService.message()
+        emailService.message(user.email, user.name)
     }
 }
 //clase NotifGenérica - dos clas   (user, handler)

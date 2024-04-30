@@ -1,21 +1,23 @@
-const readline = require('readline');
+//const readline = require('readline');
 const UserRepository = require('./UserRepository');
-const EmailService = require('./EmailService');
+const EmailService = require('./services/EmailService');
+const WholesalerEmailService = require('./services/WholesalerEmailServiceImpl');
 const UserService = require('./UserService');
 const User = require('./user');
 const UserType = require("./UserType");
+const OccasionalEmailServiceImpl = require('./services/OccasionalEmailSerivceImpl');
 
 const userRepository = new UserRepository();
 const emailService = new EmailService();
-const wholesalerEmailService = new wholesalerEmailService();
-const regularEmailService = new regularEmailService();
+const wholesalerEmailService = new WholesalerEmailService();
+const occasionalEmailService = new OccasionalEmailServiceImpl()
 
 const userService = new UserService(userRepository, emailService);
 
 const newUser = new User("John", "1", "123 Street", "1234567890", "john@example.com", UserType.Occasional);
 
 const newWholesaler = new User("Maria", "2", "Main Avenue", "0987654321", "maria@example.com", UserType.Wholesaler);
-userService.registerUser(newUser, newUser.userType);
+userService.registerUser(newUser, occasionalEmailService);
 userService.registerUser(newWholesaler, wholesalerEmailService);
 
 /*
@@ -129,3 +131,4 @@ rl.on('close', function() {
 });
 
 //necesitaremos una interfaz que se encargue genéricamente de recibir una lista de productos.
+*/

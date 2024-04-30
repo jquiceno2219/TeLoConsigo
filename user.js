@@ -1,3 +1,5 @@
+// User defines the atributtes / parameters of User.
+
 class User {
     constructor(name, identification, address, phone, email, userType) {
         this.name = name;

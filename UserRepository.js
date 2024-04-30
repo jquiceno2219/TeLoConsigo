@@ -1,4 +1,6 @@
 class UserRepository {
+
+    // List of users
     constructor() {
         this.users = [];
     }
