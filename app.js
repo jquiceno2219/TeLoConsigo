@@ -55,7 +55,9 @@ if (productToEdit) {
 }
 
 
-const productIdToDelete = /* ID del producto a eliminar */;
+const productIdToDelete = /* ID del producto a eliminar */{
+    
+};
 productService.deleteProduct(productIdToDelete);
 console.log("Producto eliminado exitosamente.");
 
