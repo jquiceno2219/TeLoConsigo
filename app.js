@@ -20,6 +20,46 @@ const newWholesaler = new User("Maria", "2", "Main Avenue", "0987654321", "maria
 userService.registerUser(newUser, occasionalEmailService);
 userService.registerUser(newWholesaler, wholesalerEmailService);
 
+//--------------------------------------------------------------------------------------------------------------------
+
+const ProductRepository = require('./ProductRepository');
+const ProductService = require('./ProductService');
+const Product = require('./Product');
+
+const productRepository = new ProductRepository();
+const productService = new ProductService(productRepository);
+
+const product1 = new Product("Producto 1", "SKU001", "Descripción del producto 1", 50.00, "Plástico", "Rojo", "Accesorio electrónico", 10, ["imagen1.jpg", "imagen2.jpg"], new Date(), new Date());
+const product2 = new Product("Producto 2", "SKU002", "Descripción del producto 2", 100.00, "Metal", "Azul", "Accesorio decorativo", 20, ["imagen3.jpg"], new Date(), new Date());
+const product3 = new Product("Producto 3", "SKU003", "Descripción del producto 3", 150.00, "Madera", "Verde", "Computadores", 5, ["imagen4.jpg", "imagen5.jpg"], new Date(), new Date());
+
+productService.addProduct(product1);
+productService.addProduct(product2);
+productService.addProduct(product3);
+
+console.log("Lista de productos:");
+const products = productService.getAllProducts();
+products.forEach(product => {
+    console.log(product);
+});
+
+const productIdToEdit = /* ID del producto a editar */;
+const productToEdit = productService.getProductById(productIdToEdit);
+if (productToEdit) {
+    productToEdit.name = "Nuevo nombre del producto";
+    productToEdit.price = 200.00;
+    productService.editProduct(productToEdit);
+    console.log("Producto editado exitosamente.");
+} else {
+    console.log("Producto no encontrado.");
+}
+
+
+const productIdToDelete = /* ID del producto a eliminar */;
+productService.deleteProduct(productIdToDelete);
+console.log("Producto eliminado exitosamente.");
+
+
 /*
 const rl = readline.createInterface({
     input: process.stdin,
@@ -132,6 +172,3 @@ rl.on('close', function() {
 
 //necesitaremos una interfaz que se encargue genéricamente de recibir una lista de productos.
 */
-
-
-//mojarra
