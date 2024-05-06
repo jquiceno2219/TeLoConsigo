@@ -43,7 +43,7 @@ products.forEach(product => {
     console.log(product);
 });
 
-const productIdToEdit = /* ID del producto a editar */;
+const productIdToEdit = "Producto 1";
 const productToEdit = productService.getProductById(productIdToEdit);
 if (productToEdit) {
     productToEdit.name = "Nuevo nombre del producto";
@@ -55,122 +55,8 @@ if (productToEdit) {
 }
 
 
-const productIdToDelete = /* ID del producto a eliminar */{
-    
+const productIdToDelete = "Producto 2" {
+
 };
 productService.deleteProduct(productIdToDelete);
 console.log("Producto eliminado exitosamente.");
-
-
-/*
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
-
-
-function menu() {
-    console.log("\n\n--- Menú ---");
-    console.log("1. Registrar nuevo usuario");
-    console.log("2. Eliminar usuario");
-    console.log("3. Actualizar datos de usuario");
-    console.log("4. Salir\n");
-}
-
-// Registro, caso 1
-function registerUserByInput() {
-// console.log("TEST");
-    rl.question("Nombre: ", async function(nombre) {
-        rl.question("Identificación: ", async function(identificacion) {
-            rl.question("Dirección: ", async function(direccion) {
-                rl.question("Teléfono: ", async function(telefono) {
-                    rl.question("Correo: ", async function(correo) {
-                        rl.question("¿Es wholesaler?", async function(userType) {
-                            let userToAdd = new User(nombre, identificacion, direccion, telefono, correo, userType);
-                            await userService.registerUser(userToAdd, userType);
-                            menu();
-                            option();
-                        });
-                    });
-                });
-            });
-        });
-    });
-}
-
-//Eliminar, caso 2
-function deleteUserByInput() {
-    rl.question("ID del usuario a eliminar: ", async function(idUsuario) {
-        await userRepository.deleteUser(idUsuario);
-        console.log("Usuario eliminado correctamente.");
-        menu();
-        option();
-    });
-}
-
-// Actualización, caso 3
-function updateUserByInput() {
-    rl.question("ID del usuario a actualizar: ", async function(idUsuario) {
-        const userExists = await userRepository.findById(idUsuario);
-        if (!userExists) {
-            console.log("No se encontró ningún usuario con ese ID.");
-            menu();
-            option();
-            return;
-        }
-        console.log("Usuario encontrado. Proporcione los nuevos datos:");
-
-        rl.question("Nombre: ", async function(nombre) {
-                rl.question("Dirección: ", async function(direccion) {
-                    rl.question("Teléfono: ", async function(telefono) {
-                        rl.question("Correo: ", async function(correo) {
-                            rl.question("¿Es mayorista? (s/n): ", async function(esMayorista) {
-                                let userToAdd = new User(nombre, idUsuario, direccion, telefono, correo, esMayorista === 's');
-                                await userRepository.updateUsuer(userToAdd);
-                                menu();
-                                option();
-                            });
-                        });
-                    });
-                });
-            });
-    });
-}
-
-
-function option() {
-   // console.log("Test");
-    rl.question("Seleccione una opción: ", async function(opcion) {
-        switch (opcion) {
-            case '1':
-                registerUserByInput();
-                break;
-            case '2':
-                deleteUserByInput();
-                break;
-            case '3':
-                updateUserByInput();
-                break;
-            case '4':
-                console.log("Cerrando");
-                rl.close();
-                break;
-            default:
-                console.log("Opción no válida. Reintentalo.");
-                menu();
-                option();
-                break;
-        };
-    });
-};
-
-option();
-menu();
-
-rl.on('close', function() {
-    console.log("¡Hasta luego!");
-    process.exit(0);
-});
-
-//necesitaremos una interfaz que se encargue genéricamente de recibir una lista de productos.
-*/
