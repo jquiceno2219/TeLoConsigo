@@ -22,9 +22,9 @@ userService.registerUser(newWholesaler, wholesalerEmailService);
 
 //--------------------------------------------------------------------------------------------------------------------
 
-const ProductRepository = require('./ProductRepository');
-const ProductService = require('./ProductService');
-const Product = require('./Product');
+const ProductRepository = require('./ProductManagement/productRepository');
+const ProductService = require('./ProductManagement/ProductService');
+const Product = require('./ProductManagement/product');
 
 const productRepository = new ProductRepository();
 const productService = new ProductService(productRepository);
@@ -36,12 +36,6 @@ const product3 = new Product("Producto 3", "SKU003", "Descripción del producto 
 productService.addProduct(product1);
 productService.addProduct(product2);
 productService.addProduct(product3);
-
-console.log("Lista de productos:");
-const products = productService.getAllProducts();
-products.forEach(product => {
-    console.log(product);
-});
 
 const productIdToEdit = "Producto 1";
 const productToEdit = productService.getProductById(productIdToEdit);
@@ -55,8 +49,6 @@ if (productToEdit) {
 }
 
 
-const productIdToDelete = "Producto 2" {
-
-};
+const productIdToDelete = "SKU002";
 productService.deleteProduct(productIdToDelete);
 console.log("Producto eliminado exitosamente.");

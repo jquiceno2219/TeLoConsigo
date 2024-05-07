@@ -1,22 +1,25 @@
 class ProductService {
     constructor() { 
-        this.productRepository = new this.productRepository();
+        this.productRepository = [];
     }
 
     async addProduct(product) {
-        await this.productRepository.addProduct(product);
+        this.productRepository.push(product);
     }
 
     async editProduct(product) {
-        await this.productRepository.editProduct(product);
+        const i = this.productRepository.find(product => product.id === this.productRepository.id);
+        if (i !== -1){
+            this.productRepository[i] = product;
+        }
     }
 
     async deleteProduct(productId) {
-        await this.productRepository.deleteProduct(productId);
+        this.productRepository = this.productRepository.filter(product => product.id !== productId);
     }
 
     async getProductById(productId) {
-        return await this.productRepository.findById(productId);
+        return this.productRepository.find(product => product.id === this.productRepository.identification);
     }
 }
 

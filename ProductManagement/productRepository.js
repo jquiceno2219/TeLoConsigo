@@ -4,7 +4,7 @@ class productRepository {
     }
 
     async addProduct(product) {
-        this.product.push(product);
+        this.products.push(product);
     }
 
     async findById(id) {
@@ -12,7 +12,7 @@ class productRepository {
     }
 
     async editProduct(product) {
-        const i = this.product.find(product => product.id === this.products.id);
+        const i = this.products.find(product => product.id === this.products.id);
         if (i !== -1){
             this.products[i] = product;
         }
@@ -24,4 +24,4 @@ class productRepository {
 }
 
 
-module.exports = ProductsRepository;
+module.exports = productRepository;

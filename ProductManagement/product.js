@@ -1,3 +1,5 @@
+//Creates product
+
 class product {
     constructor (id, name, description, price, material, color, category, stock, images, creationDate, updateDate){
         this.id = id;
@@ -14,4 +16,4 @@ class product {
     }
 }
 
-module.exports = Product;
+module.exports = product;
