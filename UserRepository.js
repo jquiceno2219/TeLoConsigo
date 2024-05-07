@@ -5,6 +5,7 @@ class UserRepository {
         this.users = [];
     }
 
+    //self-explanatory
     async saveUser(user) {
         this.users.push(user);
     }

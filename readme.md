@@ -2,6 +2,10 @@
 
 The following is an exercise on SOLID Principles which also serves as a practice on node.js.
 
+Developed by:
+J. Q. Pimienta
+Val Martinez
+
 ## Activity prompt (on spanish)
 La empresa “Te lo consigo” se dedica a la venta de computadores y accesorios de
 tecnología por internet, actualmente por redes sociales, la empresa desea migrar
@@ -32,6 +36,10 @@ Use the following command on the terminal:
 node app.js
 ```
 
-## UML Diagram
+## UML Diagrams
 
-![UML Diagram for project.](./assets/UML%20Te_Lo_Consigo.png)
+![UML Diagram for project.](./assets/image.png)
+
+Sequence diagrams:
+![User Management sequence diagram.](./assets/Secuence_Diagram-Gestión%20de%20Usuarios.drawio.png)
+![Product Management sequence diagram.](./assets/Secuence_Diagram-Gestión%20de%20Productos.drawio.png)
