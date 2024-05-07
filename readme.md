@@ -37,9 +37,9 @@ node app.js
 ```
 
 ## UML Diagrams
-
+### Class Diagram:
 ![UML Diagram for project.](./assets/image.png)
 
-Sequence diagrams:
+### Sequence diagrams:
 ![User Management sequence diagram.](./assets/Secuence_Diagram-Gestión%20de%20Usuarios.drawio.png)
 ![Product Management sequence diagram.](./assets/Secuence_Diagram-Gestión%20de%20Productos.drawio.png)
